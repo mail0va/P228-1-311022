@@ -1,0 +1,23 @@
+﻿@*@using P228_1_task_311022.Models;*@
+@using P228_1_task_311022.ViewModels;
+@model HomeVM
+
+<h1>Home Index</h1>
+
+<h2>
+    Brands
+</h2>
+@foreach (Brand brand in Model.Brands)
+{
+<p>
+    <a  asp-controller="home" asp-action="models"asp-route-id="@brand.Id">@brand.Name</a>
+</p>}
+
+<h2>
+    Models
+</h2>
+@foreach (Model modell in Model.Models)
+{
+<p>
+    <a  asp-controller="home" asp-action="cars"asp-route-id="@modell.Id">@modell.Name</a>
+</p>}

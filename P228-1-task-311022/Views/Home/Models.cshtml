@@ -1,0 +1,22 @@
+﻿@model Model
+@{
+    ViewData["Title"] = "Models"; 
+    }
+
+<h1>Models</h1>
+<p>id: @Model.Id, name:@Model.Name</p>
+
+    @if (Model.Cars != null && Model.Cars.Count > 0)
+     {
+        @foreach (Car car in Model.Cars)
+         {
+            <p>
+                <a asp-controller="home"  asp-action="models"asp-route-id="@car.Id"> id: @car.Id , name: @car.Name</a>
+            </p>
+         }         
+     }
+
+
+
+
+
